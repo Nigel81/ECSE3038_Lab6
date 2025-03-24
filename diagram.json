@@ -1,0 +1,41 @@
+{
+    "version": 1,
+    "author": "Avanique Weir",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+      { "type": "wokwi-dht22", "id": "dht1", "top": -47.7, "left": 157.8, "attrs": {} },
+      {
+        "type": "wokwi-led",
+        "id": "led1",
+        "top": 121.2,
+        "left": -44.2,
+        "attrs": { "color": "red" }
+      },
+      { "type": "wokwi-lcd1602", "id": "lcd1", "top": -44.57, "left": -310.4, "attrs": {} },
+      { "type": "wokwi-potentiometer", "id": "pot1", "top": -154.9, "left": -221, "attrs": {} }
+    ],
+    "connections": [
+      [ "esp:TX", "$serialMonitor:RX", "", [] ],
+      [ "esp:RX", "$serialMonitor:TX", "", [] ],
+      [ "dht1:VCC", "esp:5V", "red", [ "v153.6", "h-182.4", "v-19.2" ] ],
+      [ "dht1:GND", "esp:19", "black", [ "v0" ] ],
+      [ "esp:5", "led1:A", "green", [ "h14.44", "v115.2", "h-134.4" ] ],
+      [ "lcd1:A", "esp:5V", "green", [ "v0" ] ],
+      [ "led1:C", "esp:GND.1", "green", [ "v0", "h-9.2", "v-28.8", "h28.8", "v19.2" ] ],
+      [ "lcd1:K", "esp:GND.1", "green", [ "v76.8", "h96", "v9.6", "h28.8", "v-19.2" ] ],
+      [ "lcd1:D7", "esp:22", "green", [ "v0" ] ],
+      [ "lcd1:D6", "esp:21", "green", [ "v0" ] ],
+      [ "lcd1:D5", "esp:19", "green", [ "v0" ] ],
+      [ "lcd1:D4", "esp:18", "green", [ "v0" ] ],
+      [ "lcd1:E", "esp:5", "green", [ "v0" ] ],
+      [ "lcd1:RW", "esp:GND.3", "green", [ "v-67.2", "h364.7", "v67.2" ] ],
+      [ "lcd1:RS", "esp:4", "green", [ "v0" ] ],
+      [ "pot1:VCC", "esp:5V", "red", [ "v192", "h37.6", "v105.6", "h134.4" ] ],
+      [ "pot1:SIG", "lcd1:V0", "green", [ "v28.8", "h-144.4", "v163.2", "h67.2" ] ],
+      [ "lcd1:VDD", "esp:5V", "green", [ "v28.8", "h0.1", "v124.8", "h268.8" ] ],
+      [ "lcd1:VSS", "esp:GND.2", "green", [ "v-76.8", "h393.6", "v19.2" ] ],
+      [ "dht1:SDA", "esp:32", "green", [ "v0" ] ]
+    ],
+    "dependencies": {}
+  }

@@ -1,0 +1,9 @@
+[wokwi]
+version = 1
+elf = ".pio/build/esp32/firmware.elf"
+firmware = ".pio/build/esp32/firmware.bin"
+
+# Forward HTTP requests from the simulated ESP32 to the internet
+[[forward]]
+from = 80
+to = "ecse3038-temp-light-lab.onrender.com:443"
